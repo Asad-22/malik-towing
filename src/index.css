@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-navy-rgb: 10 34 64;
+  --brand-red-rgb: 178 34 52;
+  --brand-white-rgb: 255 255 255;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+}
+
+body {
+  @apply bg-white font-sans text-slate-800 antialiased;
+}
+
+@layer components {
+  .flag-divider {
+    height: 6px;
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgb(var(--brand-red-rgb)) 0 28px,
+      rgb(var(--brand-white-rgb)) 28px 56px
+    );
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-up,
+  .animate-pulse-ring {
+    animation: none;
+  }
+}
