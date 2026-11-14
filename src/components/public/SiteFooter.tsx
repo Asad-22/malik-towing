@@ -89,6 +89,13 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <p className="mx-auto max-w-7xl px-4 py-6 text-center text-sm text-white/70 lg:px-6">
           {settings.text('footer.copyright')}
+          <a 
+  href="/admin" 
+  className="text-xs text-white/60 hover:text-white underline ml-4"
+>
+  Admin Login
+</a>
+
         </p>
       </div>
     </footer>
