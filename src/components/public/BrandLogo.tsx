@@ -9,15 +9,23 @@ export function BrandLogo({ variant }: { variant: 'header' | 'footer' }) {
     variant === 'footer' ? settings.text('company.footer_logo_url') || headerLogo : headerLogo;
 
   if (logo) {
-    return <img src={logo} alt={companyName} className="h-12 w-auto max-w-[220px] object-contain" />;
+    return (
+      <img
+        src={logo}
+        alt={companyName}
+        className="h-[72px] w-auto max-w-[300px] shrink-0 object-contain transition-transform duration-200"
+      />
+    );
   }
 
   return (
-    <span className="flex items-center gap-3">
-      <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-red text-white shadow-md">
-        <Truck className="h-6 w-6" aria-hidden="true" />
+    <span className="flex items-center gap-3.5">
+      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-red text-white shadow-md sm:h-14 sm:w-14">
+        <Truck className="h-7 w-7 sm:h-8 sm:w-8" aria-hidden="true" />
       </span>
-      <span className="text-lg font-extrabold uppercase tracking-tight text-white">{companyName}</span>
+      <span className="text-xl font-extrabold uppercase tracking-tight text-white sm:text-2xl">
+        {companyName}
+      </span>
     </span>
   );
 }
